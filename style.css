@@ -1,0 +1,497 @@
+*{
+    margin : 0%;
+    padding : 0%;
+    box-sizing: border-box;
+}
+
+html ,body{
+    height : 100%;
+    width : 100%;
+}
+body{
+    font-family: "Montserrat";
+    overflow-x: hidden;
+}
+
+nav {
+    width : 100%;
+    padding : 2vw;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.8);
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    gap : 3vh;
+    list-style: none;
+}
+nav ul li a {
+    font-size: 1vw;
+    text-decoration: none;
+    padding : 0.7vw 1vw;
+    border-radius : 25px;
+    color : white;
+}
+nav ul li a:hover {
+    background-image: linear-gradient(to right,green , blue);
+}
+nav h1{
+    font-size: 4vw;
+    font-weight: 300;
+    text-align: center;
+    margin-right: 8vw;
+    color : rgb(11, 241, 7);
+    line-height: none;
+}
+nav h1 span{
+    font-weight: 700;
+    color : rgb(231, 231, 231);
+}
+/*page 1 *********************/
+.page1{
+    height :100%;
+    width : 100%;
+    display: flex;
+    background-image: linear-gradient(rgb(16, 16, 16) , rgb(0, 0, 0));
+}
+
+.page1 .left ,.page1 .right{
+    height : 100%;
+    width : 40%;
+    background-color: transparent;
+    color:rgb(255, 255, 255);
+    font-size: 6vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.page1 .left {
+    text-align: end;
+}
+
+.page1 .left h1:last-child , .page1 .right h1:last-child{
+    color :rgb(11, 241, 7);
+}
+.page1 .middle{
+    width : 20%;
+    position : relative;
+    background-color: transparent;
+    overflow: hidden;
+}
+.page1 .middle .img-box{
+    width : 100%;
+    height : 80%;
+    position: absolute;
+}
+.page1 .middle .img-box img{
+    width : 100%;
+    height : 63%;
+    object-fit: cover;
+    object-position: center;
+}
+/*************/
+.page1 .middle .img-1 {
+    animation: moveImage 20s linear infinite; /* Total cycle of 40 seconds */
+    animation-delay: 0s; /* First image starts immediately */
+    top: 100%; /* Start out of view */
+}
+
+.page1 .middle .img-2 {
+    animation: moveImage 20s linear infinite;
+    animation-delay: 5s; /* Starts 10 seconds after the first image */
+    top: 100%;
+}
+
+.page1 .middle .img-3 {
+    animation: moveImage 20s linear infinite;
+    animation-delay: 10s; /* Starts 20 seconds after the first image */
+    top: 100%;
+}
+
+.page1 .middle .img-4 {
+    animation: moveImage 20s linear infinite;
+    animation-delay: 15s; /* Starts 30 seconds after the first image */
+    top: 100%;
+}
+.page1 .middle .img-5 {
+    animation: moveImage 20s linear infinite;
+    animation-delay: 20s; /* Starts 30 seconds after the first image */
+    top: 100%;
+}
+
+@keyframes moveImage {
+    0% {
+        top: 100%; /* Start out of view */
+        transform: rotateX(90deg); /* Starts rotated along the X-axis */
+        opacity: 0;
+    }
+    10% {
+        top: 25%; /* Move into view */
+        transform: rotateX(0deg); /* Rotate into normal position */
+        opacity: 1;
+    }
+    25% {
+        top: 25%; /* Stay in view */
+        transform: rotateX(0deg); /* Stay without rotation */
+        opacity: 1;
+    }
+    35% {
+        top: 100%; /* Move out of view */
+        transform: rotateX(90deg); /* Rotate again while moving out */
+        opacity: 0;
+    }
+    100% {
+        top: 100%; /* Remain out of view until the next cycle */
+        transform: rotateX(90deg); /* Reset rotation */
+        opacity: 0;
+    }
+}
+
+/******************page2 **************/
+.empty{
+    height : 12%;
+}
+.page2{
+    height : 100%;
+    width : 100%;
+    background-color: black;
+    color : white;
+}
+
+.page2 h1{
+    text-align: center;
+    font-size: 4vw;
+    padding-bottom: 3vh;
+}
+
+.page2 .scroller{
+    height : 25vh;
+    width : 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    margin : 8vh  0;
+    background-color: rgb(140, 141, 142);
+    border-top: 10px solid rgb(60, 60, 60);
+    border-bottom: 10px solid rgb(61, 61, 61);
+}
+
+.page2 .scroller .inner-content{
+    height : 100%;
+    display: inline-block;
+    animation: marque  linear 40s 1s infinite;
+    white-space: nowrap;
+    border-top: 10px dashed rgb(24, 24, 24);
+    border-bottom: 10px dashed rgb(31, 29, 29);
+    padding: 1vh 0;
+}
+.page2 .scroller:hover .inner-content{
+  animation-play-state: paused;
+}
+.page2 .scroller img{
+    width: 30vh;
+    height : 100%;
+}
+
+.page2 .scroller:last-child .inner-content{
+    animation: marque  linear 40s 1s infinite reverse;
+}
+
+.page2 .scroller:last-child:hover .inner-content{
+    animation-play-state: paused;
+}
+
+@keyframes marque{
+    from{
+         transform: translateX(0%);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+/************page3*********************/
+.page3{
+    height : 100%;
+    width : 100%;
+    background-color: black;
+    color:white;
+    padding : 2vh;
+}
+.page3>h1{
+    text-align: center;
+    font-size: 5vw;
+    line-height: 8vw;
+    font-family: "Montserrat";
+}
+.page3 .container{
+    height: 83vh;
+    width : 100%;
+    display: grid;
+    grid-template-areas: "nav nav nav nav nav" 
+                         "slide article main abc abc" 
+                         "slide footer footer abc abc";
+
+    gap: 2vh;
+    padding : 2vh;
+    overflow: hidden;
+
+} 
+
+.page3 .container .items img{
+    width : 100%;
+    height : 100%;
+   object-fit: cover;
+   object-position: center;
+} 
+
+.page3 .container .items{
+    min-width: 30vh;
+    border : 2px solid rgb(245, 244, 244);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.25s linear;
+}
+.page3 .container .items:hover{
+    scale: 1.03;
+}
+
+.page3 .container .item-1{
+   object-position: bottom;
+   grid-area : nav;
+   background-color: rgb(147, 228, 15);
+}
+.page3 .container  .item-2{
+   grid-area : slide;
+   background-color: rgb(255, 0, 170);
+}
+.page3 .container .item-3{
+   grid-area : main;
+   background-color: rgb(0, 68, 255);
+}
+.page3 .container  .item-4{
+   grid-area : article;
+   background-color: rgb(255, 0, 25);
+}
+.page3 .container  .item-5{
+    object-position: bottom;
+   grid-area : footer;
+   background-color: rgb(2, 16, 16);
+}
+.page3 .container .item-6{
+   grid-area : abc;
+   background-color: rgb(28, 155, 155);
+}
+
+
+/****************page4 *******************/
+
+.page4 {
+    width : 100%;
+    height : 100%;
+    background-color: #0a0e11;
+    display: flex;
+}
+
+.page4 .left{
+    width : 50%;
+    height : 100%;
+    color : white;
+    padding : 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.page4 .left h1{
+     font-size: 6vw;
+     font-family : "Montserrat";
+     line-height: none;
+}
+
+.page4  .left h1 span {
+    color :rgb(11, 241, 7);
+   /*color : rgb(147, 228, 15); */
+}
+
+.page4 .left p{
+    font-size: 2vh;
+    padding-right : 30%;
+    padding-top : 4vh;
+}
+.page4 .left p:first-child{
+    font-weight: 800;
+    color : grey;
+    letter-spacing: 0.5vh;
+    padding : 2vh;
+}
+
+.page4 .right {
+    height : 100%;
+    width : 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.page4 .right img{
+    height : 80%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.8;
+    animation : blink ease-in-out 1.5s infinite alternate-reverse;
+}
+
+@keyframes blink {
+    from{
+        opacity: 0.3;
+    }
+
+    to{
+        opacity : 0.8;
+    }
+}
+
+/**************.page5************/
+.page5{
+    width : 100%;
+    height : 100%;
+    background-color: #0a0e11;
+    padding : 4vw;
+}
+
+.page5 h1:first-child{
+    font-size: 4vw;
+    color : white;
+    font-weight: 500;
+    text-align: center;
+    line-height: 8vw;
+}
+
+.page5 .container{
+    height : 80%;
+    width : 100%;
+    border : 2px solid rgb(220, 217, 217);
+    padding : 2vh;
+    display: flex;
+    justify-content: space-around;
+}
+
+.page5 .container .box{
+    width : 30vh;
+    /* height : 60vh; */
+    text-align: center;
+    margin : 2vh 6vh;
+}
+.page5 .container .box:nth-child(2){
+    align-self: flex-end;
+}
+
+.page5 .container .box .img-box{
+    width : 30vh;
+    height: 40vh;
+    border-radius : 4px;
+    border : 2px solid white;
+    overflow: hidden;
+}
+.page5 .container .box .img-box img{
+    width : 100%;
+    height : 100%;
+    object-fit: cover;
+    background-position: center;
+    transition : 0.25s linear;
+}
+
+.page5 .container .box .img-box img:hover{
+    scale : 1.1;
+}
+
+.page5 .container .box h2 {
+    font-size: 4vh;
+    line-height: 8vh;
+    color : white;
+}
+
+.page5 .container .box button{
+   font-size: 2vh;
+   font-weight: 600;
+   padding : 1vh 3vh;
+   color : rgb(141, 138, 138);
+   background-color: transparent;
+   border : none;
+   transition : 0.25s linear;
+}
+
+.page5 .container .box button:hover{
+    background-color: aliceblue;
+    color : black;
+}
+
+/* ******footer********* */
+
+footer{
+    width : 100%;
+    /* height : 40vh; */
+    padding : 3vh;
+    text-align: center;
+    background-color: #252424;
+}
+
+footer .contact-us{
+    display: flex;
+    justify-content: center;
+    gap : 9vh;
+    color : white;
+}
+footer .contact-us a {
+   color : white;
+   text-decoration: none;
+}
+
+footer .contact-us a:hover{
+    color : orange;
+}
+
+footer form{
+    padding : 3vh 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+footer form p{
+    padding : 2vh 0;
+    font-size: 2.5vh;
+    color : rgb(250, 244, 244);
+}
+  
+footer form input{
+    padding : 0.7vh 4vh;
+    font-size: 2.5vh;
+    outline : none;
+}
+footer form button{
+    padding : 0.7vh 3vh;
+    font-size: 2.5vh;
+    margin : 3vh 0;
+    background-color: #01c19e;
+    color : white;
+    border : none;
+}
+footer form button:hover{
+    background-color: #029379;
+}
+
+footer .footer-bottom{
+    color : rgb(172, 172, 172);
+    font-size: 1vw;
+}
+footer .footer-bottom a{
+    color : rgb(170, 169, 169);
+}
+
+
+
+
+
+
