@@ -23,12 +23,32 @@
     /**************page1*******/
     .page1 {
        padding :2vh;
+      /* align-items: center; */
+    }
+
+    .page1 .left h1:nth-child(2) , .page1 .right h1:nth-child(2){
+      color :rgb(255, 255, 255);
     }
     .page1 .left{
-       width : 30%;
+       width : 25%;
+       padding : none;
+       text-align: center;
+    }
+    .page1 .right{
+       width : 25%;
+       text-align: center;
+       padding : none;
+       color :rgb(11, 241, 7);
+    }
+    .page1 .left ul ,.page1 .right ul{
+      display: initial;
+      text-align: center;
+    }
+    .page1 .left >h1 ,.page1 .right>h1{
+       display: none;
     }
     .page1 .middle{
-       width : 30%
+       width : 50%;
     }
     .page1 h1{
         font-size: 13vw;

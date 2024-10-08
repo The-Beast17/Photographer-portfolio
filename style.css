@@ -67,11 +67,14 @@ nav h1 span{
     flex-direction: column;
     justify-content: center;
 }
+.page1 .left ul ,.page1 .right ul{
+    display: none;
+}
 .page1 .left {
     text-align: end;
 }
 
-.page1 .left h1:last-child , .page1 .right h1:last-child{
+.page1 .left h1:nth-child(2) , .page1 .right h1:nth-child(2){
     color :rgb(11, 241, 7);
 }
 .page1 .middle{
@@ -487,7 +490,7 @@ footer .footer-bottom{
     font-size: 1vw;
 }
 footer .footer-bottom a{
-    color : rgb(170, 169, 169);
+    color :rgb(11, 241, 7);
 }
 
 
